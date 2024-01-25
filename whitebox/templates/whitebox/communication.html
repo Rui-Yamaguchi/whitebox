@@ -1,0 +1,33 @@
+{%load static%}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'whitebox/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'whitebox/css/communication.css' %}">
+    <title>Communication</title>
+</head>
+<body>
+    <form a method="post" class="p-4 m-4 bg-light border border-success rounded form-group">
+        {% csrf_token %}
+        <div class="top">
+            <h1>Communication</h1>
+        </div>
+        <div class="comment">
+            <label>コメントする</label>
+            <textarea class="form-control" name="text"></textarea>
+        </div>
+        <div class="evaluation">
+            <select name="rate">
+                <option value="Good">👍🏻</option>
+                <option value="Bad">👎🏻</option>
+            </select>
+        </div>
+    </form>
+    {% endblock %}
+
+</body>
+</html>
